@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .taskbox {
+      @apply border-b border-gray-200 bg-gray-50 p-6 mb-4
+    }
+    .checkbox {
+        @apply w-6 h-6 border border-solid border-gray-300 rounded-md items-center flex justify-center cursor-pointer
+    }
+}
