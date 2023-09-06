@@ -4,3 +4,64 @@ body {
   font-family: 'Work Sans', sans-serif;
 }
 
+.react-calendar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.react-calendar .react-calendar__tile {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.5em 1em;
+
+}
+
+.react-calendar .react-calendar__tile:hover {
+  background: #F2F4F7;
+  border-radius: 50%;
+}
+
+.react-calendar .react-calendar__tile--active {
+  padding: .1em 1em !important;
+  display: flex;
+  justify-content: center;
+}
+
+.react-calendar__tile--active abbr {
+  background-color: #3F5BF6;
+  border-radius: 100%;
+  padding: 0.5em 1em;
+  color: white;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  color: #344054;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+}
+
+.react-calendar__month-view__days {
+  justify-content: center;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  align-items: center;
+}
+
+.react-calendar .react-calendar__tile {
+  padding: .5em;
+}
+
+.react-calendar__navigation__label {
+  color: #344054;
+  font-weight: 700;
+}

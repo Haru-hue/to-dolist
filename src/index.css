@@ -3,10 +3,28 @@
 @tailwind utilities;
 
 @layer components {
-    .taskbox {
-      @apply border-b border-gray-200 bg-gray-50 p-6 mb-4
-    }
-    .checkbox {
-        @apply w-6 h-6 border border-solid border-gray-300 rounded-md items-center flex justify-center cursor-pointer
-    }
+  .taskbox {
+    @apply border-b border-gray-200 bg-gray-50 p-6 mb-4 cursor-pointer;
+  }
+  .checkbox {
+    @apply w-6 h-6 border border-solid border-gray-300 rounded-md items-center flex justify-center cursor-pointer bg-white;
+  }
+  .borderbox {
+    @apply border border-solid border-gray-200;
+  }
+  .textbox {
+    @apply shadow-sm bg-[#F9FAFB] rounded-lg resize-none h-32 w-full p-3;
+  }
+  .modal {
+    @apply fixed bottom-0 left-0 w-full bg-white;
+  }
+  .overlay {
+    @apply fixed bottom-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50
+  }
+  .popup {
+    @apply shadow-md p-6 border border-solid border-gray-200 bg-white max-md:absolute max-md:rounded-t-4xl rounded-lg w-full max-md:pb-full max-md:bottom-0
+  }
+  .taskup {
+    @apply p-6 max-md:rounded-t-4xl rounded-lg space-y-4 md:w-[90%] lg:w-full max-md:pb-full max-md:absolute max-md:bottom-0 bg-white
+  }
 }
