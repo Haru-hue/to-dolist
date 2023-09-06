@@ -5,6 +5,7 @@ import { dateContext } from "../context";
 import dayjs from "dayjs";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import ReactPaginate from "react-paginate";
+import getTasks from "../hooks/getTasks";
 
 function TodoList() {
   const context = dateContext();
@@ -13,11 +14,21 @@ function TodoList() {
     throw new Error("dateContext is undefined");
   }
 
-  const { state } = context;
+  const { state, dispatch } = context;
+
   const [todos, setTodos] = useState<Todo[]>([]);
   const [sortedTasks, setSortedTasks] = useState<Todo[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const tasksPerPage = 5;
+
+  useEffect(() => {
+    async function fetchTasks() {
+      const tasks = await getTasks();
+      dispatch({ type: "SET_TASKS", tasks });
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+    fetchTasks();
+  }, [dispatch]);
 
   const filteredTasks = useCallback(() => {
     const dayTasks = state.tasks
@@ -59,6 +70,9 @@ function TodoList() {
           completed={todo.completed}
         />
       ))}
+      {currentTasks.length === 0 && (
+        <p className="flex justify-center">No Tasks planned for this day!</p>
+      )}
       <div className="mt-6 border-t border-solid border-gray-300"></div>
       <ReactPaginate
           className="flex items-center pt-2 justify-between"
