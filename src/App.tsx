@@ -13,7 +13,7 @@ function App() {
       <div className="p-4 lg:p-12 flex flex-col md:overflow-hidden">
         <Headline />
         <div className="flex max-md:flex-col lg:space-x-4">
-          <div className="flex flex-col lg:w-3/5 xl:w-7/10">
+          <div className="flex flex-col lg:w-3/5 2xl:w-7/10">
             <Calendar />
             <TodoList />
           </div>

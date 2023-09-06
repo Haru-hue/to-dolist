@@ -25,7 +25,7 @@ function Calendar() {
       <div className="pb-4 text-[#101828] font-semibold">
         {currentDate.format("MMMM YYYY")}
       </div>
-      <div className="date-boxes space-x-6 max-md:overflow-scroll flex justify-between">
+      <div className="date-boxes space-x-6 max-md:overflow-scroll max-2xl:overflow-hidden container-snap flex justify-between">
         {dateArray.map((date) => (
           <div
             key={date.format("YYYY-MM-DD")}

@@ -65,3 +65,7 @@ body {
   color: #344054;
   font-weight: 700;
 }
+
+.container-snap::-webkit-scrollbar {
+  display: none;
+}

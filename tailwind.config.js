@@ -11,6 +11,7 @@ export default {
         "3/10": "30%"
       },
       "screens": {
+        "max-2xl": { max: '1536px' },
         "max-xl": { max: '1280px' },
         "max-md": { max: '768px' },
       },
